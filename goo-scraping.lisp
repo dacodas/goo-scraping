@@ -127,7 +127,7 @@
        (grab-goo-pages
         (make-array number-per-chunk :displaced-to *missing-entries* :displaced-index-offset (* number-per-chunk chunk)))))))
 
-(defun simplify-entry (entry-number)
+#+nil(defun simplify-entry (entry-number)
   (let* ((simplified-entries-directory (make-pathname :directory (append
                                                                   (pathname-directory (asdf:system-source-directory :goo-scraping))
                                                                   '("simplified-dictionary-entries"))))
@@ -145,7 +145,7 @@
                 (lquery:$1 document "div.basic_title h1" (text-without-comments))
                 (lquery:$1 document "div.meaning_area" (serialize)))))))
 
-(let* ((start 2)
+#+nil(let* ((start 2)
        (end 259849)
        (number-per-chunk 500)
        (number-of-chunks (ceiling (1+ (- end start)) number-per-chunk))
